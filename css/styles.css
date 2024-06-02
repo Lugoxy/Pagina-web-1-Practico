@@ -163,11 +163,13 @@ justify-content: center;
 }
 
 /** servicios **/
+@media (min-width: 768px) {
 .servicios{
     display:grid; /** se agg las prop. de grid **/
     grid-template-columns: repeat(3,1fr); /** division de columnas en 3 fracciones iguales = 1fr 1fr 1fr **/
     column-gap: 1rem;  /** agrega margen a las divisiones **/
 } 
+}
 
 .servicio {
  display: flex;
