@@ -1,0 +1,263 @@
+:root{
+    --blanco:#ffffff;
+    --oscuro:#212121;
+    --primario: #FFC107;
+    --secundario:#0097a7;
+    --gris:#757575;
+    --grisClaro: #DFE9F3;
+}
+/* Globales **/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body {
+    font-size: 16px; /* 1rem= 10p */ 
+    font-family: "Krub", sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+/** clase boton**/
+.boton{
+background-color: var(--secundario);
+color: var(--blanco);
+padding: 1rem 3rem;
+margin-top: 3rem;
+font-size:2rem;
+text-decoration: none;
+text-transform: uppercase;
+font-weight: bold;
+border-radius: .5rem;
+width: 90%;
+text-align: center;
+border: none;
+}
+
+@media(min-width:768px){
+    .boton{
+        width:auto;
+    }
+}
+/** aparecer mano en botones**/
+.boton:hover {
+    cursor:pointer;
+}
+.sombra{
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.48);
+     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.48);
+     background-color: var(--blanco);
+     padding: 2rem;
+     border-radius: 1rem;
+}
+/* TIPOGRAFIA **/
+h1{
+    font-size: 3.8rem;
+}
+h2{ 
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+
+/* TITULOS **/
+.titulo span {
+    font-size: 2rem;  
+}
+
+/* Utilidades**/
+.w-sm-100{
+    width: 100%;
+}
+
+@media(min-width: 768px ) {
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+
+.flex{
+    display: flex;
+}
+
+.alinear-derecha{
+ justify-content: flex-end;
+}
+
+
+/* NAVEGACION PRINCIAPL **/
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navegacion-principal{
+   display: flex;
+   flex-direction: column;
+  
+}
+ @media(min-width: 768px ) {
+   .navegacion-principal{ 
+    flex-direction: row;
+    justify-content: space-between;
+   } 
+ }
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color:var(--blanco);
+  text-decoration:none;
+ font-size: 2rem;
+ font-weight: 700;
+ padding: 1rem;
+}
+
+.navegacion-principal a:hover{
+    background-color:var(--primario);
+    color: var(--oscuro);
+}
+
+/* IMAGEN HERO **/
+.hero{
+    background-image: url(../img/hero.jpg); /** establecer imagen de fondo**/
+    background-repeat: no-repeat;           /** evitar que se repita imagen de fondo**/
+    background-size:cover ;                      /** definir tamaño de imagen**/
+    height: 450px;                          /** altura de la imagen**/
+    position: relative;                     /** posicionar elemento relativo sobre si mismo**/ 
+    margin-bottom: 2rem;
+}
+.contenido-hero{
+position: absolute;                         /** la imagen es el contenedor**/
+background-color: rgb(0,0,0,.7);             /** define transparencia**/ 
+background-color: rgba(0 0 0 / 70%);
+width: 100%;
+height: 100%;
+
+/** bloque para alinear verticalmente**/
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+/** bloque para dar color al contenido de la imagen hero**/
+.contenido-hero h2,
+.contenido-hero{
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+/** servicios **/
+.servicios{
+    display:grid; /** se agg las prop. de grid **/
+    grid-template-columns: repeat(3,1fr); /** division de columnas en 3 fracciones iguales = 1fr 1fr 1fr **/
+    column-gap: 1rem;  /** agrega margen a las divisiones **/
+} 
+
+.servicio {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.servicio h3{
+ color: var(--secundario);
+ font-weight:normal;
+
+}
+
+.servicio p{
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/** contactos **/
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%); /** usa el valor mas pequeño**/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+
+}
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend
+{   margin: 0 auto; /** centrar en firefox**/
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+    text-align: center; /** centrar otros nav **/
+}
+
+@media(min-width: 768px ){
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;  /** separacion columnas **/
+       }
+}
+
+.campo:nth-child(3),
+.campo:nth-child(4){     /** se selecciona la clase 3 de campo **/
+    grid-column: 1 / 3; /** se selec final 1 tercer columna **/
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+.campo label{
+   color: var(--blanco);
+   font-weight: bold;
+   margin-bottom: .5rem;
+   display: block;
+}
+
+.campo textarea{
+    height: 20rem;
+
+}
+
+
+.input-text {
+  width: 100%;
+  border:none;
+  padding: 1.5rem;
+  border-radius:.5rem;
+}
+
+/** footer*/
+.footer{
+    text-align: center;
+}
+
